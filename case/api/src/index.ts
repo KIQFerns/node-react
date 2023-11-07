@@ -4,14 +4,14 @@ import { Request, Response } from "express"
 import { AppDataSource } from "./data-source"
 import launchesRouter from "./routes/launches.routes"
 import rocketsRouter from "./routes/rockets.routes"
-import {pagination} from 'typeorm-pagination'
+import * as cors from 'cors';
 
 AppDataSource.initialize().then(async () => {
 
     // create express app
     const app = express()
     app.use(bodyParser.json())
-    app.use(pagination)
+    app.use(cors<Request>()); 
 
     app.get("/",(req,res)=>{
         res.send("Fullstack Challenge 🏅 - Space X API")
