@@ -8,14 +8,14 @@ import { useDispatch, useSelector } from "react-redux";
 function PieCharts(props) {
 
     const { currentLaunch } = useSelector((state) => state.launchReducer);
-    console.log(currentLaunch)
+
     return (
         <Box flexGrow={1} style={{ backgroundColor: '#878787', margin: 75, padding: 25 }}>
         <Typography align="center" variant="h5" gutterBottom>{props.title}</Typography>
         <PieChart
             series={[
                 {
-                    data: currentLaunch,
+                    data: currentLaunch.firstData,
                 },
             ]}
             width={700}

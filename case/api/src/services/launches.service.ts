@@ -26,5 +26,13 @@ export const DataChartService = async () => {
     .addGroupBy('rocket.name')
     .getRawMany();
 
-  return firstData
+  const secondData = await LaunchesRepository.createQueryBuilder('launches')
+    .select("COUNT(launches.rocket)", "value")
+    .addSelect("rocket.name", "label")
+    .leftJoin('launches.rockets', 'rocket')
+    .groupBy("launches.rocket")
+    .addGroupBy('rocket.name')
+    .getRawMany();
+
+  return {firstData, secondData}
 };
