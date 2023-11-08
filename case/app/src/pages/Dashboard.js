@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from 'react';
+import { useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import RocketsLaunch from '../components/RocketsLaunch';
 import useFetch from '../hooks/useFetch';
@@ -7,7 +7,7 @@ import useFetch from '../hooks/useFetch';
 function Dashboard() {
 
     const url = 'http://localhost:3000/launches/stats';
-    const fetch = useFetch('http://localhost:3000/launches/stats');
+    const fetch = useFetch(url);
 
     useEffect(() => {
         console.log(fetch)

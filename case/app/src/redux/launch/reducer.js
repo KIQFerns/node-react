@@ -1,7 +1,7 @@
 import LaunchActionTypes from "./action-types";
 
 const initialState = {
-    currentLaunch: [],
+    currentLaunch: { "firstData": [], "Years": []},
 }
 
 const launchReducer = (state = initialState, action) => {

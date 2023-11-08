@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { PieChart } from '@mui/x-charts/PieChart';
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 
 function PieCharts(props) {
