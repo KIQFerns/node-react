@@ -6,7 +6,7 @@
   :clipboard: Projeto:
 </h1>
 <p>Uma API para listar informações da API SpaceX-API.</p>
-<h1>:book:O que eu usei:</h1>
+<h1>:book:Tecnologias:</h1>
 <ul>
 <li> NODE</li>
 <li> REACT</li>
