@@ -29,3 +29,6 @@ npm start --prefix ./case/app
 Para preencher o Banco de dados automaticamente de um post em:
 http://localhost:3000/rockets
 http://localhost:3000/launches
+
+finalmente:
+acesse: http://localhost:3001/dashboard
