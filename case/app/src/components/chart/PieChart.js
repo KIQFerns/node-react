@@ -10,11 +10,11 @@ function PieCharts(props) {
 
     return (
         <Box flexGrow={1} style={{ backgroundColor: '#878787', margin: 75, padding: 25 }}>
-        <Typography align="center" variant="h5" gutterBottom>{props.title}</Typography>
+        <Typography align="center" variant="h5" sx={{ fontWeight: 'bold' }} gutterBottom>{props.title}</Typography>
         <PieChart
             series={[
                 {
-                    data: currentLaunch.firstData,
+                    data: currentLaunch.finalresult,
                 },
             ]}
             width={700}

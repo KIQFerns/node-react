@@ -7,7 +7,7 @@ import { AllLaunchesService, DataChartService } from '../services/launches.servi
 export const allLaunchers = async (req: Request, res: Response) => {
     const LaunchesRepository = AppDataSource.getRepository(Launches)
 
-    const take = req.query.limit || 10
+    const take = req.query.limit || 10000
     const start = req.query.skip || 0
     const search = req.query.search || ''
 

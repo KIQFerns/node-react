@@ -56,22 +56,21 @@ export const DataChartService = async () => {
     .orderBy("DATE_PART('year',date_utc)")
     .getRawMany();
 
-    const final = RocketsData.map(rocket => {
-    xlabel.forEach((year, index) => {
-      var necessidade = [];
-      values.forEach((o, i) => {
-        if (o.label === rocket.label) {
-          necessidade[index] = o.value;
-        } else {
-          necessidade[index] = 0;
-        }
+  const finalresult = firstData.map((element) => {
+    const data = xlabel.map((number) => {
+      const found = values.find((qtd) => {
+        if ((qtd.date_part == number) && (qtd.label == element.label)) return true
       });
-
-      return  necessidade;
-
-    });
+      if (found) {
+        return found.value
+      } else {
+        return 0
+      }
+    })
+    return { ...element, id: element.label + 'id', stack: 'total', data: data };
   });
 
 
-  return { firstData, Years: xlabel, Rockets: Rockets, values: values, final: final }
+
+  return {finalresult, xlabel}
 };

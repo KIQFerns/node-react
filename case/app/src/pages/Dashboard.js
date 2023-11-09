@@ -2,19 +2,24 @@ import { useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import RocketsLaunch from '../components/RocketsLaunch';
 import useFetch from '../hooks/useFetch';
-
+import Typography from '@mui/material/Typography';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+import GridLaunch from '../components/GridLaunch'
 
 function Dashboard() {
 
-    const url = 'http://localhost:3000/launches/stats';
-    const fetch = useFetch(url);
+    const fetchLaunch = useFetch('http://localhost:3000/launches/stats', 'dataLaunch');
+    const fetchGrid = useFetch('http://localhost:3000/launches/', 'dataGrid');
 
     useEffect(() => {
-        console.log(fetch)
-    }, [fetch]);
+        console.log(fetchGrid)
+    }, [fetchLaunch, fetchGrid]);
 
     return (
-        <Grid container spacing={2} style={{ backgroundColor: '#616161' }}>
+        <Grid container spacing={2} style={{ backgroundColor: '#2e2e2e' }}>
+            <Grid item xs={12}>
+                <Typography align="center" variant="h3" marginTop={3} sx={{ fontWeight: 'bold', color: 'white' }}><RocketLaunchIcon fontSize='20' style={{ color: '#ff2929', marginRight: '10' }} />Space X</Typography>
+            </Grid>
             <Grid item xs={6}>
                 <RocketsLaunch title={'Lançamento de foguetes'} chart={'pie'} />
             </Grid>
@@ -22,8 +27,10 @@ function Dashboard() {
                 <RocketsLaunch title={'Lançamentos por ano'} chart={'bar'} />
             </Grid>
             <Grid item xs={12}>
-                {/* Registros de Lançamento */}
-                <p>Registros de Lançamento</p>
+                <Typography align="center" variant="h5" marginTop={3} sx={{ fontWeight: 'bold', color: 'white' }}>Registro de Lançamentos</Typography>
+            </Grid>
+            <Grid item xs={12}>
+                <GridLaunch/>
             </Grid>
         </Grid>
     );
