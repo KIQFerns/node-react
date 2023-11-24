@@ -1,34 +1,26 @@
 <h1 align="center">
-   Back-end Challenge 🏅 2023 - Space X API
+   Front-end Angular
 </h1>
 
 <h1>
   :clipboard: Projeto:
 </h1>
-<p>Uma API para listar informações da API SpaceX-API.</p>
+<p>Um serviço para gerar email provisórios.</p>
 <h1>:book:Tecnologias:</h1>
 <ul>
-<li> NODE</li>
-<li> REACT</li>
-<li> POSTGRES</li>
-<li> TYPEORM</li>
+<li> Angular</li>
 <li> TYPESCRIPT</li>
 </ul>
 
 <h2>:information_source: Como usar: </h2>
-<p> Você precisa ter o Node instalado, preferencialmente na v18.17.0 </p>
+<p> Você precisa ter o Angular instalado, preferencialmente CLI: 17.0.1 </p>
+
+acesse: https://cors-anywhere.herokuapp.com/ e de permissão.
 
 Em seu terminal:
 ```
-Clone este repositório e execute:
-docker-compose -f ./case/docker-compose.yml up
-npm start --prefix ./case/api
-npm start --prefix ./case/app
-
- 
-Para preencher o Banco de dados automaticamente de um post em:
-http://localhost:3000/rockets
-http://localhost:3000/launches
+npm i -- para instalar as bibliotecas
+ng serve -- para iniciar o servidor
 
 finalmente:
-acesse: http://localhost:3001/dashboard
+acesse: http://localhost:4200/
